@@ -24,7 +24,7 @@ class ProductResource extends Resource
 
             'price' => $this->price,
 
-            'stock' => $this->stock->count() > 0 ? $this->stock : 
+            'stock' => $this->stock > 0 ? $this->stock : 
                         'Out of stock',
 
             'rating' => $this->reviews->count() > 0 ? round($this->reviews->sum('star')/$this->reviews->count(),1)
