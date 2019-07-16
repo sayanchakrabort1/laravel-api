@@ -22,6 +22,7 @@ class CreateReviewsTable extends Migration
             $table->string('customer');
             $table->text('review');
             $table->integer('star');
+            $table->timestamps();
         });
     }
 
