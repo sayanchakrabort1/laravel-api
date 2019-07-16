@@ -12,10 +12,15 @@ class CreateProductsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+        Schema::defaultStringLength(191);
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->text('detail');
+            $table->integer('price');
+            $table->integer('stock');
+            // $table->timestamps();
         });
     }
 
